@@ -16,11 +16,7 @@ module FunWithStrings
   
   def anagram_groups
     array = self.split(" ")
-    if array.length == 1 
-      array
-    else
-      array.group_by { |element| element.downcase.chars.sort }.values
-    end
+    array.group_by { |element| element.downcase.chars.sort }.values
   end
   
 end
