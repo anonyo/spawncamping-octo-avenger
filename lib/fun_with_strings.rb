@@ -15,13 +15,14 @@ module FunWithStrings
   end
   
   def anagram_groups
-    array = []
-    if self.empty?
-      []
-    else 
-      array << Array.new
+    array = self.split(" ")
+    if array.length == 1 
+      array
+    else
+      array.group_by { |element| element.downcase.chars.sort }.values
     end
   end
+  
 end
 
 # make all the above functions available as instance methods on Strings:
